@@ -28,7 +28,11 @@ int main() {
         // Geeting choice of user
         printf("\n Which Option Do You Want to Select (Enter Number)?:  ");
 
-       scanf("%d",&choice);
+        if(scanf("%d",&choice) != 1){
+            int c;
+            while((c = getchar()) != '\n' && c != EOF);
+            choice = 0;
+        }
 
         switch (choice)
         {
